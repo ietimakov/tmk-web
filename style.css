@@ -348,6 +348,14 @@ img {
     gap: 12px;
 }
 
+.site-logo-img {
+    height: 46px;
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    object-fit: contain;
+}
+
 .logo-icon {
     width: 42px;
     height: 42px;

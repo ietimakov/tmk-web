@@ -7,20 +7,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const TG_BOT_TOKEN = '8810758612:AAEpvVanXYog58IeR4vMtPjheN2dLEyEqnk';
     let TG_CHAT_ID = localStorage.getItem('tmk_tg_chat_id') || '';
 
-    // Auto-fetch Chat ID from Telegram getUpdates if not stored
+    // Auto-fetch Chat ID from Telegram getUpdates (prioritizing Group Chats starting with -)
     async function getOrFetchChatId() {
-        if (TG_CHAT_ID) return TG_CHAT_ID;
         try {
             const resp = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/getUpdates`);
             const data = await resp.json();
             if (data.ok && data.result && data.result.length > 0) {
-                // Find last chat ID from messages
+                // 1. First search for Group Chat ID (starts with -)
                 for (let i = data.result.length - 1; i >= 0; i--) {
-                    const msg = data.result[i].message || data.result[i].channel_post;
-                    if (msg && msg.chat) {
-                        TG_CHAT_ID = msg.chat.id;
-                        localStorage.setItem('tmk_tg_chat_id', TG_CHAT_ID);
-                        return TG_CHAT_ID;
+                    const update = data.result[i];
+                    const msg = update.message || update.channel_post || (update.my_chat_member && update.my_chat_member.chat);
+                    if (msg) {
+                        const chatObj = msg.chat || msg;
+                        if (chatObj && chatObj.id && String(chatObj.id).startsWith('-')) {
+                            TG_CHAT_ID = chatObj.id;
+                            localStorage.setItem('tmk_tg_chat_id', TG_CHAT_ID);
+                            return TG_CHAT_ID;
+                        }
+                    }
+                }
+                // 2. Fallback to private user chat ID
+                if (!TG_CHAT_ID) {
+                    for (let i = data.result.length - 1; i >= 0; i--) {
+                        const update = data.result[i];
+                        const msg = update.message || update.channel_post;
+                        if (msg && msg.chat && msg.chat.id) {
+                            TG_CHAT_ID = msg.chat.id;
+                            localStorage.setItem('tmk_tg_chat_id', TG_CHAT_ID);
+                            return TG_CHAT_ID;
+                        }
                     }
                 }
             }
@@ -33,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function sendTelegramNotification(htmlText) {
         const chatId = await getOrFetchChatId();
         if (!chatId) {
-            console.warn('Telegram Chat ID missing. Please send a message or /start to @tmkweb_bot');
+            console.warn('Telegram Chat ID missing. Please add @tmkweb_bot to your Telegram Group!');
             return;
         }
 

@@ -1,8 +1,57 @@
 /* -------------------------------------------------------------
-   TMK-WEB — Interactive JavaScript Controller
+   TMK-WEB — Interactive JavaScript Controller + Telegram Bot
    ------------------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Telegram Bot Configuration
+    const TG_BOT_TOKEN = '8810758612:AAEpvVanXYog58IeR4vMtPjheN2dLEyEqnk';
+    let TG_CHAT_ID = localStorage.getItem('tmk_tg_chat_id') || '';
+
+    // Auto-fetch Chat ID from Telegram getUpdates if not stored
+    async function getOrFetchChatId() {
+        if (TG_CHAT_ID) return TG_CHAT_ID;
+        try {
+            const resp = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/getUpdates`);
+            const data = await resp.json();
+            if (data.ok && data.result && data.result.length > 0) {
+                // Find last chat ID from messages
+                for (let i = data.result.length - 1; i >= 0; i--) {
+                    const msg = data.result[i].message || data.result[i].channel_post;
+                    if (msg && msg.chat) {
+                        TG_CHAT_ID = msg.chat.id;
+                        localStorage.setItem('tmk_tg_chat_id', TG_CHAT_ID);
+                        return TG_CHAT_ID;
+                    }
+                }
+            }
+        } catch (err) {
+            console.error('Failed to fetch Telegram Chat ID:', err);
+        }
+        return TG_CHAT_ID;
+    }
+
+    async function sendTelegramNotification(htmlText) {
+        const chatId = await getOrFetchChatId();
+        if (!chatId) {
+            console.warn('Telegram Chat ID missing. Please send a message or /start to @tmkweb_bot');
+            return;
+        }
+
+        try {
+            await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: htmlText,
+                    parse_mode: 'HTML'
+                })
+            });
+        } catch (error) {
+            console.error('Error sending Telegram notification:', error);
+        }
+    }
+
     // 1. Mobile Menu Toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const mainNav = document.getElementById('mainNav');
@@ -50,6 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
         pagespeed: { price: 5000, name: 'PageSpeed 95+' },
         payment: { price: 8000, name: 'Онлайн-оплата' }
     };
+
+    let currentCalcSummary = {};
 
     function updateCalculator() {
         const siteTypeRadio = document.querySelector('input[name="siteType"]:checked');
@@ -104,6 +155,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (summaryTime) summaryTime.textContent = timeDays;
         if (summaryOldPrice) summaryOldPrice.textContent = totalPrice.toLocaleString('ru-RU') + ' ₽';
         if (summaryPrice) summaryPrice.textContent = discountPrice.toLocaleString('ru-RU') + ' ₽';
+
+        currentCalcSummary = {
+            type: siteTypeName,
+            marketing: marketingNames.join(', ') || 'Без рекламы',
+            extras: extraNames.join(', ') || 'Без доп. опций',
+            time: timeDays,
+            oldPrice: totalPrice.toLocaleString('ru-RU') + ' ₽',
+            discountPrice: discountPrice.toLocaleString('ru-RU') + ' ₽'
+        };
 
         if (calcDetailsInput) {
             calcDetailsInput.value = `Тип: ${siteTypeName}; Реклама: ${marketingNames.join('+') || 'Нет'}; Опции: ${extraNames.join('+') || 'Нет'}; Итог: ${discountPrice} руб`;
@@ -185,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalServiceInput = document.getElementById('modalServiceInput');
 
     document.querySelectorAll('.open-modal-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', () => {
             const serviceName = btn.getAttribute('data-service') || 'Проект';
             if (modalTitle) modalTitle.textContent = `Рассчитать стоимость: ${serviceName}`;
             if (modalServiceInput) modalServiceInput.value = serviceName;
@@ -223,12 +283,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Form handlers
+    // Form Handlers & Telegram Dispatcher
     const calcForm = document.getElementById('calcForm');
     if (calcForm) {
         calcForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const phone = document.getElementById('calcPhone').value;
+
+            // Formatted Telegram Message
+            const tgMsg = `🔥 <b>НОВАЯ ЗАЯВКА ИЗ КАЛЬКУЛЯТОРА!</b>\n\n` +
+                          `📱 <b>Телефон:</b> <code>${phone}</code>\n` +
+                          `🌐 <b>Тип сайта:</b> ${currentCalcSummary.type}\n` +
+                          `📈 <b>Реклама:</b> ${currentCalcSummary.marketing}\n` +
+                          `⚙️ <b>Доп. опции:</b> ${currentCalcSummary.extras}\n` +
+                          `⏱ <b>Сроки:</b> ${currentCalcSummary.time}\n` +
+                          `💰 <b>Итоговая цена (со скидкой 20%):</b> <b>${currentCalcSummary.discountPrice}</b> (без скидки: ${currentCalcSummary.oldPrice})`;
+
+            sendTelegramNotification(tgMsg);
+
             showToast('Скидка 20% забронирована!', `Спасибо! Наш специалист перезвонит на номер ${phone} в течение 15 минут.`);
             calcForm.reset();
             updateCalculator();
@@ -239,6 +311,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const name = document.getElementById('userName').value;
+            const phone = document.getElementById('userPhone').value;
+            const task = document.getElementById('userTask').value;
+            const msg = document.getElementById('userMsg').value || 'Без комментария';
+
+            const tgMsg = `🚀 <b>НОВАЯ ЗАЯВКА НА РАЗРАБОТКУ!</b>\n\n` +
+                          `👤 <b>Имя:</b> ${name}\n` +
+                          `📱 <b>Телефон:</b> <code>${phone}</code>\n` +
+                          `🎯 <b>Интересует:</b> ${task}\n` +
+                          `💬 <b>Комментарий:</b> ${msg}`;
+
+            sendTelegramNotification(tgMsg);
+
             showToast('Заявка успешно принята!', 'Мы уже обрабатываем ваше обращение и скоро свяжемся с вами.');
             contactForm.reset();
         });
@@ -248,6 +333,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalForm) {
         modalForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const phone = document.getElementById('modalPhone').value;
+            const service = document.getElementById('modalServiceInput').value || 'Консультация';
+
+            const tgMsg = `⚡ <b>БЫСТРЫЙ ЗАПРОС РАСЧЕТА СТОИМОСТИ!</b>\n\n` +
+                          `🎯 <b>Услуга:</b> ${service}\n` +
+                          `📱 <b>Телефон:</b> <code>${phone}</code>`;
+
+            sendTelegramNotification(tgMsg);
+
             if (modalBackdrop) modalBackdrop.classList.remove('active');
             showToast('Запрос отправлен!', 'Наш менеджер в Уфе свяжется с вами в течение 15 минут.');
             modalForm.reset();

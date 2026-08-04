@@ -1862,7 +1862,7 @@ img {
     }
 
     .mobile-toggle {
-        display: block;
+        display: none !important;
     }
 
     .floating-cta-bar .btn-text {

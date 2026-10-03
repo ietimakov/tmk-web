@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sendTelegramNotification(tgMsg);
 
             if (modalBackdrop) modalBackdrop.classList.remove('active');
-            showToast('Запрос отправлен!', 'Наш менеджер в Уфе свяжется с вами в течение 15 минут.');
+            showToast('Запрос отправлен!', 'Наш менеджер свяжется с вами в течение 15 минут.');
             modalForm.reset();
         });
     }

@@ -1338,6 +1338,12 @@ img {
     gap: 30px;
 }
 
+@media (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
 .portfolio-card {
     overflow: hidden;
     display: flex;

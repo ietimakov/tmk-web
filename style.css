@@ -344,15 +344,16 @@ img {
 
 .logo {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
 }
 
 .site-logo-img {
-    height: 46px;
-    width: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    width: 190px;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
     object-fit: contain;
 }
 
@@ -506,12 +507,12 @@ img {
 }
 
 .hero-metrics {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: center;
-    gap: 24px;
+    gap: 16px;
     padding-top: 24px;
     border-top: 1px solid var(--border-color);
-    flex-wrap: wrap;
 }
 
 .metric-item {
@@ -534,9 +535,7 @@ img {
 }
 
 .metric-divider {
-    width: 1px;
-    height: 36px;
-    background: var(--border-color);
+    display: none;
 }
 
 /* Hero Visual Showcase */
@@ -1000,12 +999,16 @@ img {
 
 .price-row {
     margin-top: 10px;
+    display: block;
 }
 
 .price-box {
     display: flex;
-    align-items: baseline;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    margin-top: 6px;
+    white-space: nowrap;
 }
 
 .old-price {
@@ -1019,6 +1022,7 @@ img {
     font-size: 2.2rem;
     font-weight: 800;
     color: var(--emerald);
+    white-space: nowrap;
 }
 
 .calc-form {
@@ -1876,6 +1880,123 @@ img {
 }
 
 @media (max-width: 600px) {
+    .site-header {
+        padding: 10px 0;
+    }
+
+    .header-container {
+        gap: 10px;
+    }
+
+    .logo {
+        flex: 0 1 140px;
+        min-width: 0;
+    }
+
+    .site-logo-img {
+        width: min(100%, 140px);
+    }
+
+    .logo-text {
+        width: 100%;
+    }
+
+    .brand-sub {
+        font-size: 0.68rem;
+        line-height: 1.25;
+    }
+
+    .header-actions {
+        flex: 0 0 auto;
+    }
+
+    .header-actions .btn {
+        gap: 6px;
+        padding: 8px 12px;
+        font-size: 0.76rem;
+    }
+
+    .hero-section {
+        padding-bottom: 32px;
+    }
+
+    .services-section.section-padding {
+        padding-top: 32px;
+    }
+
+    .calculator-card {
+        padding: 30px 18px;
+    }
+
+    .calc-body-grid,
+    .calc-options,
+    .calc-summary-panel {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .calc-body-grid {
+        gap: 22px;
+    }
+
+    .radio-buttons-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .calc-summary-panel {
+        padding: 18px;
+    }
+
+    .summary-header {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .summary-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .summary-row {
+        min-width: 0;
+        gap: 8px;
+        font-size: 0.82rem;
+    }
+
+    .summary-row strong {
+        min-width: 0;
+        text-align: right;
+        overflow-wrap: anywhere;
+    }
+
+    .price-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .price-box {
+        width: 100%;
+        justify-content: space-between;
+        gap: 6px;
+        white-space: nowrap;
+    }
+
+    .old-price {
+        flex-shrink: 0;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .current-price {
+        font-size: clamp(1.7rem, 7vw, 2rem);
+        white-space: nowrap;
+    }
+
+    .floating-cta-bar {
+        display: none;
+    }
+
     .section-title {
         font-size: 1.8rem;
     }
@@ -1897,50 +2018,18 @@ img {
     }
 }
 
-/* Decorative Cats */
-.decorative-cats {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-}
+@media (max-width: 370px) {
+    .logo {
+        flex-basis: 112px;
+    }
 
-.decorative-cat {
-    position: absolute;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-}
+    .site-logo-img {
+        width: min(100%, 112px);
+    }
 
-.decorative-cats--hero {
-    overflow: hidden;
-}
-
-.decorative-cat--hero {
-    width: 260px;
-    left: -118px;
-    top: 70px;
-}
-
-.speed-section {
-    position: relative;
-}
-
-.speed-section .container {
-    position: relative;
-    z-index: 1;
-}
-
-.decorative-cat--speed {
-    width: 220px;
-    right: -82px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-@media (max-width: 991px) {
-    .decorative-cats {
-        display: none;
+    .header-actions .btn {
+        gap: 5px;
+        padding: 7px 8px;
+        font-size: 0.7rem;
     }
 }

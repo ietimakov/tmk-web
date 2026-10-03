@@ -1896,3 +1896,51 @@ img {
         padding: 20px;
     }
 }
+
+/* Decorative Cats */
+.decorative-cats {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+.decorative-cat {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+.decorative-cats--hero {
+    overflow: hidden;
+}
+
+.decorative-cat--hero {
+    width: 260px;
+    left: -118px;
+    top: 70px;
+}
+
+.speed-section {
+    position: relative;
+}
+
+.speed-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.decorative-cat--speed {
+    width: 220px;
+    right: -82px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 991px) {
+    .decorative-cats {
+        display: none;
+    }
+}

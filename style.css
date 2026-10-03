@@ -328,12 +328,162 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(7, 9, 14, 0.85);
+    background: #07090e;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border-color);
     padding: 16px 0;
     transition: var(--transition);
+}
+
+/* Cosmic background across the main content */
+.site-main {
+    position: relative;
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse 55% 11% at 91% 9%, rgba(40, 65, 130, 0.27), transparent 75%),
+        radial-gradient(ellipse 49% 13% at 7% 33%, rgba(58, 35, 109, 0.24), transparent 76%),
+        radial-gradient(ellipse 56% 12% at 88% 59%, rgba(20, 85, 111, 0.19), transparent 77%),
+        radial-gradient(ellipse 50% 12% at 15% 83%, rgba(42, 44, 108, 0.22), transparent 78%),
+        #070b16;
+}
+
+.site-main > section {
+    position: relative;
+    z-index: 1;
+}
+
+.space-scene {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+}
+
+.space-stars {
+    position: absolute;
+    inset: 0;
+    background-repeat: repeat;
+    pointer-events: none;
+}
+
+.space-stars--far {
+    background-image:
+        radial-gradient(1px 1px at 24px 42px, rgba(188, 214, 255, 0.85) 98%, transparent),
+        radial-gradient(1px 1px at 165px 18px, rgba(217, 223, 255, 0.65) 98%, transparent),
+        radial-gradient(1px 1px at 260px 115px, rgba(158, 204, 255, 0.82) 98%, transparent),
+        radial-gradient(1px 1px at 91px 210px, rgba(238, 242, 255, 0.72) 98%, transparent),
+        radial-gradient(1px 1px at 294px 274px, rgba(154, 192, 255, 0.68) 98%, transparent);
+    background-size: 320px 300px;
+    opacity: 0.56;
+    animation: space-twinkle 7s ease-in-out infinite alternate;
+}
+
+.space-stars--near {
+    background-image:
+        radial-gradient(1.5px 1.5px at 58px 90px, rgba(225, 239, 255, 0.92) 98%, transparent),
+        radial-gradient(1.5px 1.5px at 242px 178px, rgba(181, 214, 255, 0.85) 98%, transparent),
+        radial-gradient(2px 2px at 401px 55px, rgba(241, 246, 255, 0.83) 98%, transparent),
+        radial-gradient(1px 1px at 475px 282px, rgba(190, 201, 255, 0.9) 98%, transparent);
+    background-size: 510px 340px;
+    opacity: 0.42;
+    animation: space-twinkle 11s ease-in-out -4s infinite alternate-reverse;
+}
+
+.space-galaxy {
+    position: absolute;
+    width: min(47vw, 690px);
+    aspect-ratio: 1.8;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse at center, rgba(202, 211, 255, 0.14) 0 3%, rgba(111, 103, 206, 0.16) 13%, rgba(66, 100, 180, 0.09) 32%, transparent 67%),
+        conic-gradient(from 30deg, transparent 0 17%, rgba(116, 104, 194, 0.08) 23%, transparent 34% 56%, rgba(73, 143, 189, 0.07) 62%, transparent 73%);
+    filter: blur(16px);
+    opacity: 0.75;
+}
+
+.space-galaxy--left {
+    top: 11%;
+    left: -11%;
+    transform: rotate(-25deg);
+}
+
+.space-galaxy--right {
+    right: -12%;
+    bottom: 8%;
+    transform: rotate(22deg);
+}
+
+.space-planet {
+    position: absolute;
+    aspect-ratio: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.space-planet--earth {
+    width: clamp(190px, 24vw, 370px);
+    aspect-ratio: 820 / 860;
+    top: 14%;
+    right: -8%;
+    background-image: url('assets/earth.png');
+    background-size: 100% 100%;
+    -webkit-mask-image: radial-gradient(ellipse 48% 46% at 50% 51%, #000 97%, transparent 100%);
+    mask-image: radial-gradient(ellipse 48% 46% at 50% 51%, #000 97%, transparent 100%);
+    opacity: 0.56;
+}
+
+.space-planet--moon {
+    width: clamp(150px, 18vw, 280px);
+    top: 930px;
+    left: -6%;
+    z-index: 0;
+    background-image: url('assets/moon.png');
+    background-size: contain;
+    opacity: 0.58;
+}
+
+.space-comet {
+    position: absolute;
+    left: 110vw;
+    width: 150px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba(237, 249, 255, 0.95), rgba(144, 205, 255, 0.48) 16%, transparent 100%);
+    filter: drop-shadow(0 0 5px rgba(139, 209, 255, 0.7));
+    opacity: 0;
+    animation: space-comet-flight 18s linear infinite;
+}
+
+.space-comet--one { top: 12%; animation-delay: -2s; }
+.space-comet--two { top: 39%; animation-delay: -9s; animation-duration: 23s; }
+.space-comet--three { top: 67%; animation-delay: -16s; animation-duration: 27s; }
+
+@keyframes space-twinkle {
+    from { opacity: 0.34; }
+    to { opacity: 0.86; }
+}
+
+@keyframes space-comet-flight {
+    0%, 55% { transform: translate3d(0, -10vh, 0) rotate(-22deg); opacity: 0; }
+    59% { opacity: 0.7; }
+    76% { transform: translate3d(-135vw, 42vh, 0) rotate(-22deg); opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    .space-galaxy { width: 85vw; opacity: 0.5; }
+    .space-planet--earth { right: -145px; opacity: 0.43; }
+    .space-planet--moon { display: none; }
+    .space-comet { width: 95px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .space-stars { animation: none; }
+    .space-comet { display: none; }
 }
 
 .header-container {
@@ -541,6 +691,13 @@ img {
 /* Hero Visual Showcase */
 .hero-visual {
     position: relative;
+}
+
+@media (min-width: 993px) {
+    .hero-visual {
+        align-self: start;
+        margin-top: 76px;
+    }
 }
 
 .visual-card-wrapper {
@@ -1683,9 +1840,11 @@ img {
 
 /* Footer */
 .site-footer {
+    position: relative;
+    z-index: 2;
     border-top: 1px solid var(--border-color);
     padding: 40px 0;
-    background: rgba(5, 7, 12, 0.95);
+    background: #05070c;
     font-size: 0.88rem;
     color: var(--text-muted);
 }

@@ -438,7 +438,7 @@ img {
 
 .space-planet--moon {
     width: clamp(150px, 18vw, 280px);
-    top: 930px;
+    top: 62%;
     left: -6%;
     z-index: 0;
     background-image: url('assets/moon.png');
@@ -477,7 +477,7 @@ img {
 @media (max-width: 600px) {
     .space-galaxy { width: 85vw; opacity: 0.5; }
     .space-planet--earth { right: -145px; opacity: 0.43; }
-    .space-planet--moon { display: none; }
+    .space-planet--moon { width: 120px; left: -82px; top: 64%; opacity: 0.42; }
     .space-comet { width: 95px; }
 }
 

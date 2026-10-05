@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; connect-src https://api.github.com; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <title>Администрирование — TMK-WEB</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../"><img src="../assets/logo.png" alt="TMK-WEB"><span>Управление сайтом</span></a>
+      <a class="site-link" href="../">Открыть сайт ↗</a>
+    </header>
+
+    <section class="login-card" id="loginCard">
+      <div class="eyebrow">TMK-WEB · ADMIN</div>
+      <h1>Вход в панель</h1>
+      <p class="muted">Панель сохраняет изменения в GitHub. Создайте fine-grained token: в доступе к репозиториям выберите только <b>ietimakov/tmk-web</b>, затем задайте <b>Contents: Read and write</b>.</p>
+      <a class="text-link" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">Создать токен GitHub ↗</a>
+      <form id="loginForm">
+        <label for="tokenInput">GitHub token</label>
+        <input id="tokenInput" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…" required>
+        <button class="button primary" type="submit">Подключиться</button>
+      </form>
+      <p class="hint">Токен хранится только в памяти этой вкладки и очищается при её закрытии. Изменения создают коммиты в main и публикуются через GitHub Pages.</p>
+      <div id="loginMessage" class="message" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="workspace hidden" id="workspace">
+      <aside class="sidebar">
+        <div class="sidebar-title">Разделы сайта</div>
+        <button class="nav-button active" data-panel="prices">Цены калькулятора</button>
+        <button class="nav-button" data-panel="portfolio">Портфолио</button>
+        <div class="sidebar-note">Панель расширяется новыми разделами через дополнительные модули управления.</div>
+        <button class="button ghost logout" id="logoutButton">Выйти</button>
+      </aside>
+      <section class="panel-area">
+        <div class="panel-heading">
+          <div><div class="eyebrow">УПРАВЛЕНИЕ САЙТОМ</div><h1 id="panelTitle">Цены калькулятора</h1></div>
+          <span class="connected" id="connectionStatus">GitHub подключён</span>
+        </div>
+        <div id="panelContent"></div>
+        <div id="panelMessage" class="message" role="status" aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="portfolioDialog">
+    <form id="portfolioForm" method="dialog" class="editor-form">
+      <div class="dialog-head"><div><div class="eyebrow">ПОРТФОЛИО</div><h2 id="editorTitle">Новый проект</h2></div><button class="icon-button" type="button" id="closeDialog" aria-label="Закрыть">×</button></div>
+      <input type="hidden" id="projectId">
+      <label>Название<input id="projectTitle" required maxlength="100"></label>
+      <label>Подпись над названием<input id="projectCategory" maxlength="100" placeholder="Интернет-магазин • Уфа"></label>
+      <label>Описание<textarea id="projectDescription" rows="3" maxlength="500" required></textarea></label>
+      <label>Категории фильтра
+        <select id="projectCategories" multiple size="3">
+          <option value="ecom">Интернет-магазины</option><option value="auto">Авто &amp; Техника</option><option value="services">Услуги &amp; Производство</option>
+        </select>
+        <span class="field-hint">Можно выбрать несколько (Ctrl/Cmd + клик).</span>
+      </label>
+      <label>Теги через запятую<input id="projectTags" placeholder="Каталог, Интеграция, SEO"></label>
+      <label>Результат / PageSpeed<input id="projectScore" placeholder="98/100 PageSpeed или Проект онлайн"></label>
+      <label>Ссылка на проект<input id="projectUrl" type="url" placeholder="https://example.ru"></label>
+      <label>Изображение
+        <input id="projectImage" placeholder="assets/portfolio_example.jpg или https://…">
+        <span class="field-hint">Можно указать путь к уже загруженному файлу или выбрать новое изображение для загрузки в репозиторий.</span>
+        <input id="projectImageFile" type="file" accept="image/*">
+      </label>
+      <div class="dialog-actions"><button class="button ghost" type="button" id="cancelDialog">Отмена</button><button class="button primary" type="submit">Сохранить проект</button></div>
+      <div id="editorMessage" class="message" role="status" aria-live="polite"></div>
+    </form>
+  </dialog>
+
+  <script src="admin.js"></script>
+</body>
+</html>

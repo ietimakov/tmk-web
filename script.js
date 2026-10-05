@@ -97,19 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 3. Interactive Calculator Logic
-    const basePrices = {
+    let basePrices = {
         landing: { price: 25000, days: '3 – 5 дней', name: 'Лендинг' },
         corporate: { price: 45000, days: '7 – 10 дней', name: 'Многостраничный сайт' },
         shop: { price: 75000, days: 'от 14 дней', name: 'Интернет-магазин' }
     };
 
-    const marketingPrices = {
+    let marketingPrices = {
         yandex: { price: 15000, name: 'Яндекс.Директ' },
         seo: { price: 18000, name: 'SEO продвижение' },
         smm: { price: 12000, name: 'Трафик VK/Telegram' }
     };
 
-    const extraPrices = {
+    let extraPrices = {
         crm: { price: 5000, name: 'CRM' },
         pagespeed: { price: 5000, name: 'PageSpeed 95+' },
         payment: { price: 8000, name: 'Онлайн-оплата' }
@@ -185,6 +185,85 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Prices and portfolio are stored as JSON in the repository for /admin.
+    function renderPortfolio(items) {
+        const grid = document.getElementById('portfolioGrid');
+        if (!grid || !Array.isArray(items)) return;
+
+        const cards = items.map(item => {
+            const card = document.createElement('article');
+            card.className = 'portfolio-card glass-card';
+            card.dataset.category = (item.categories || []).join(' ');
+
+            const thumb = document.createElement('div');
+            thumb.className = 'portfolio-thumb';
+            const image = document.createElement('img');
+            image.src = item.image || '';
+            image.alt = item.title || '';
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            thumb.append(image);
+            const overlay = document.createElement('div');
+            overlay.className = 'portfolio-overlay';
+            const score = document.createElement('span');
+            score.className = 'speed-pill';
+            score.textContent = item.score || 'Проект онлайн';
+            overlay.append(score);
+            thumb.append(overlay);
+
+            const content = document.createElement('div');
+            content.className = 'portfolio-content';
+            const category = document.createElement('span');
+            category.className = 'case-cat';
+            category.textContent = item.category || '';
+            const title = document.createElement('h3');
+            title.className = 'case-title';
+            if (item.url && /^https?:\/\//i.test(item.url)) {
+                const link = document.createElement('a');
+                link.href = item.url;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = item.title || '';
+                title.append(link);
+            } else {
+                title.textContent = item.title || '';
+            }
+            const description = document.createElement('p');
+            description.className = 'case-desc';
+            description.textContent = item.description || '';
+            const tags = document.createElement('div');
+            tags.className = 'case-tags';
+            (item.tags || []).forEach(label => {
+                const tag = document.createElement('span');
+                tag.textContent = label;
+                tags.append(tag);
+            });
+            content.append(category, title, description, tags);
+            card.append(thumb, content);
+            return card;
+        });
+        grid.replaceChildren(...cards);
+        const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+        grid.querySelectorAll('.portfolio-card').forEach(card => {
+            const categories = (card.dataset.category || '').split(/\s+/);
+            card.style.display = activeFilter === 'all' || categories.includes(activeFilter) ? 'flex' : 'none';
+        });
+    }
+
+    fetch(`content/site-data.json?t=${Date.now()}`, { cache: 'no-store' })
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
+        })
+        .then(content => {
+            if (content.prices?.base) basePrices = content.prices.base;
+            if (content.prices?.marketing) marketingPrices = content.prices.marketing;
+            if (content.prices?.extras) extraPrices = content.prices.extras;
+            renderPortfolio(content.portfolio);
+            updateCalculator();
+        })
+        .catch(error => console.warn('Не удалось загрузить цены и портфолио:', error));
+
     // Radio card active state switcher
     document.querySelectorAll('.radio-card input').forEach(radio => {
         radio.addEventListener('change', () => {
@@ -215,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Portfolio Filters
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -224,9 +302,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const filterValue = btn.getAttribute('data-filter');
 
-            portfolioCards.forEach(card => {
-                const categories = card.getAttribute('data-category');
-                if (filterValue === 'all' || (categories && categories.includes(filterValue))) {
+            document.querySelectorAll('.portfolio-card').forEach(card => {
+                const categories = (card.getAttribute('data-category') || '').split(/\s+/);
+                if (filterValue === 'all' || categories.includes(filterValue)) {
                     card.style.display = 'flex';
                 } else {
                     card.style.display = 'none';

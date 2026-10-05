@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "prices": {
+    "base": {
+      "landing": { "price": 25000, "days": "3 – 5 дней", "name": "Лендинг" },
+      "corporate": { "price": 45000, "days": "7 – 10 дней", "name": "Многостраничный сайт" },
+      "shop": { "price": 75000, "days": "от 14 дней", "name": "Интернет-магазин" }
+    },
+    "marketing": {
+      "yandex": { "price": 15000, "name": "Яндекс.Директ" },
+      "seo": { "price": 18000, "name": "SEO продвижение" },
+      "smm": { "price": 12000, "name": "Трафик VK/Telegram" }
+    },
+    "extras": {
+      "crm": { "price": 5000, "name": "CRM" },
+      "pagespeed": { "price": 5000, "name": "PageSpeed 95+" },
+      "payment": { "price": 8000, "name": "Онлайн-оплата" }
+    }
+  },
+  "portfolio": [
+    { "id": "ufashintorg", "title": "Уфашинторг", "category": "Интернет-магазин • Уфа", "categories": ["ecom", "auto"], "description": "Интернет-магазин автошин и дисков с интерактивным подбором по марке авто и размерам.", "tags": ["Каталог", "Фильтр подбора", "1С Интеграция"], "score": "98/100 PageSpeed", "image": "assets/portfolio_ecom.jpg", "url": "" },
+    { "id": "b4c-design", "title": "B4C Design", "category": "Корпоративный сайт", "categories": ["services"], "description": "Премиальный сайт для Hi-Tech инжиниринговой компании с презентацией решений.", "tags": ["Hi-Tech Design", "Анимация", "SEO"], "score": "99/100 PageSpeed", "image": "assets/portfolio_hitech.jpg", "url": "" },
+    { "id": "ixen-motors", "title": "Ixen Motors Ufa / Peugeot / Citroen", "category": "Автодилеры • Уфа", "categories": ["auto"], "description": "Официальные дилерские сайты автобрендов в Уфе с онлайн-записью на тест-драйв.", "tags": ["Автодилер", "Запись на сервис", "Директ"], "score": "97/100 PageSpeed", "image": "assets/portfolio_auto.jpg", "url": "" },
+    { "id": "master-lodok", "title": "Мастер Лодок", "category": "Производство • Уфа", "categories": ["services"], "description": "Сайт крупного производителя надувных лодок и моторов с каталогом дилеров по РФ.", "tags": ["Производитель", "Каталог моторов", "Карта дилеров"], "score": "96/100 PageSpeed", "image": "assets/portfolio_masterlodok.jpg", "url": "" },
+    { "id": "integro-dom", "title": "Интегро-Дом", "category": "Строительство • Уфа", "categories": ["services"], "description": "Сайт производителя домовых конструкций и загородного домостроения под ключ в Уфе.", "tags": ["Строительство", "Домокомплекты", "Каталог проектов"], "score": "98/100 PageSpeed", "image": "assets/portfolio_integrodom.jpg", "url": "http://integro-dom.ru/" },
+    { "id": "futurewheels", "title": "Futurewheels", "category": "Интернет-магазин • Авто", "categories": ["ecom", "auto"], "description": "Интернет-магазин премиальных автомобильных колес и кованых дисков с фильтрацией подбора.", "tags": ["Автодиски", "Интернет-магазин", "Фильтр подбора"], "score": "99/100 PageSpeed", "image": "assets/portfolio_futurewheels.jpg", "url": "http://futurewheels.ru/" },
+    { "id": "vip-art", "title": "Вип-Арт", "category": "Шоу-бизнес & Афиша • Уфа", "categories": ["services"], "description": "Сайт крупнейшего концертного агентства татарских и башкирских артистов с покупкой билетов через Intickets.", "tags": ["Концертное агентство", "Продажа билетов", "Intickets"], "score": "98/100 PageSpeed", "image": "assets/portfolio_vipart.jpg", "url": "https://vipart-ufa.ru/" },
+    { "id": "master-furgon", "title": "Мастер Фургон", "category": "Авто & Техника • Производство", "categories": ["auto", "services"], "description": "Сайт компании по обшивке и переоборудованию фургонов с каталогом комплектов для разных марок автомобилей.", "tags": ["Фургоны", "Каталог", "Переоборудование"], "score": "Проект онлайн", "image": "assets/portfolio_master_furgon.jpg", "url": "https://master-furgon.ru/" },
+    { "id": "oersted", "title": "OERSTED", "category": "Производство • Конструкции", "categories": ["services"], "description": "Сайт завода светопрозрачных конструкций с направлениями по дверям, окнам, раздвижным системам и фасадам.", "tags": ["Производство", "Окна и двери", "Фасады"], "score": "Проект онлайн", "image": "assets/portfolio_oersted_global.jpg", "url": "https://oersted-global.ru/" },
+    { "id": "rus-les-torg", "title": "РусЛесТорг", "category": "Производство • Пиломатериалы", "categories": ["services"], "description": "Сайт производителя строганой доски и бруса камерной сушки с возможностью заказать расчёт пиломатериалов.", "tags": ["Пиломатериалы", "Расчёт заказа", "Доставка"], "score": "Проект онлайн", "image": "assets/portfolio_rus_les_torg.jpg", "url": "https://rus-les-torg.ru/" },
+    { "id": "energosfera", "title": "Энергосфера", "category": "Услуги • Электролаборатория", "categories": ["auto", "services"], "description": "Сайт электролаборатории по испытаниям и измерениям электрооборудования и проверке релейной защиты.", "tags": ["Электролаборатория", "Испытания", "Услуги"], "score": "Проект онлайн", "image": "assets/portfolio_en_sf.jpg", "url": "https://en-sf.ru/" },
+    { "id": "sprin", "title": "СПРИН", "category": "Промышленность • Оборудование", "categories": ["auto", "services"], "description": "Сайт поставщика металлообрабатывающего оборудования, инструмента и станочной оснастки для предприятий.", "tags": ["Станки", "Инструмент", "Оснастка"], "score": "Проект онлайн", "image": "assets/portfolio_sprin.jpg", "url": "https://sprin.company/" }
+  ]
+}

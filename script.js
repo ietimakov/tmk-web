@@ -250,11 +250,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    fetch(`content/site-data.json?t=${Date.now()}`, { cache: 'no-store' })
+    window.tmkSiteDataPromise = fetch(`content/site-data.json?t=${Date.now()}`, { cache: 'no-store' })
         .then(response => {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             return response.json();
-        })
+        });
+
+    window.tmkSiteDataPromise
         .then(content => {
             if (content.prices?.base) basePrices = content.prices.base;
             if (content.prices?.marketing) marketingPrices = content.prices.marketing;

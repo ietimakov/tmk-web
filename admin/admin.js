@@ -154,7 +154,8 @@
   // Add future admin features by registering a panel here and a matching button in admin/index.html.
   const panelModules = {
     prices: { title: 'Цены калькулятора', render: renderPrices },
-    portfolio: { title: 'Портфолио', render: renderPortfolioList }
+    portfolio: { title: 'Портфолио', render: renderPortfolioList },
+    rocket: { title: 'Ракета', render: renderRocketControls }
   };
 
   function renderPrices() {
@@ -218,6 +219,35 @@
     });
     panelContent.querySelectorAll('[data-delete-project]').forEach(button => {
       button.addEventListener('click', () => deleteProject(Number(button.dataset.deleteProject)));
+    });
+  }
+
+  function renderRocketControls() {
+    const enabled = siteData.features?.rocketEnabled !== false;
+    panelContent.innerHTML = `
+      <section class="section-card">
+        <h2 class="section-title">Полёт ракеты</h2>
+        <p class="section-description">Ракета с логотипом вылетает от Земли, делает оборот в центре экрана и направляется к Луне.</p>
+        <div class="feature-status ${enabled ? 'is-on' : 'is-off'}">Сейчас ${enabled ? 'включена' : 'выключена'}</div>
+        <div><button class="button ${enabled ? 'ghost' : 'primary'}" id="toggleRocket">${enabled ? 'Отключить ракету' : 'Включить ракету'}</button></div>
+        <p class="hint">После сохранения GitHub Pages обновит сайт. Чтобы увидеть результат, обновите главную страницу.</p>
+      </section>`;
+
+    $('#toggleRocket').addEventListener('click', async event => {
+      const button = event.currentTarget;
+      const previousFeatures = { ...(siteData.features || {}) };
+      siteData.features = { ...previousFeatures, rocketEnabled: !enabled };
+      button.disabled = true;
+      setMessage(panelMessage, 'Сохраняю настройку в Git…');
+      try {
+        const sha = await saveSiteData(enabled ? 'Disable rocket animation' : 'Enable rocket animation');
+        renderRocketControls();
+        setMessage(panelMessage, `Настройка сохранена коммитом ${sha.slice(0, 7)}. Публикация страницы запущена.`, 'success');
+      } catch (error) {
+        siteData.features = previousFeatures;
+        setMessage(panelMessage, errorText(error), 'error');
+        button.disabled = false;
+      }
     });
   }
 

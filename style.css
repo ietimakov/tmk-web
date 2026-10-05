@@ -446,6 +446,83 @@ img {
     opacity: 0.58;
 }
 
+.space-rocket {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: clamp(148px, 15vw, 190px);
+    aspect-ratio: 180 / 80;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    will-change: transform, opacity;
+    transform: translate3d(-300px, -300px, 0) scale(0.01);
+}
+
+.space-rocket::before {
+    content: '';
+    position: absolute;
+    inset: -28% -12%;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(67, 187, 255, 0.28), transparent 68%);
+    filter: blur(12px);
+}
+
+.space-rocket__shape {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 7px rgba(76, 194, 255, 0.56));
+}
+
+.space-rocket__logo {
+    position: absolute;
+    z-index: 2;
+    top: 38%;
+    left: 31%;
+    width: 44%;
+    height: auto;
+}
+
+.space-rocket__trail {
+    position: absolute;
+    top: 50%;
+    right: -83%;
+    width: 95%;
+    height: 3px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgba(255, 245, 183, 0.94), rgba(70, 192, 255, 0.58) 28%, transparent 100%);
+    filter: drop-shadow(0 0 7px rgba(76, 194, 255, 0.9));
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.space-rocket.is-flying .space-rocket__trail {
+    animation: rocket-trail-phase 8s linear both;
+}
+
+.space-rocket.is-flying .space-rocket__flame {
+    transform-origin: 154px 40px;
+    animation: rocket-flame-flicker 0.14s ease-in-out infinite alternate;
+}
+
+@keyframes rocket-trail-phase {
+    0%, 43% { opacity: 0.8; }
+    48%, 70% { opacity: 0.08; }
+    77%, 95% { opacity: 0.86; }
+    100% { opacity: 0; }
+}
+
+@keyframes rocket-flame-flicker {
+    from { transform: scaleX(0.8); opacity: 0.8; }
+    to { transform: scaleX(1.14); opacity: 1; }
+}
+
 .space-comet {
     position: absolute;
     left: 110vw;
@@ -478,12 +555,14 @@ img {
     .space-galaxy { width: 85vw; opacity: 0.5; }
     .space-planet--earth { right: -145px; opacity: 0.43; }
     .space-planet--moon { width: 120px; left: -82px; top: 64%; opacity: 0.42; }
+    .space-rocket { width: 148px; }
     .space-comet { width: 95px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .space-stars { animation: none; }
     .space-comet { display: none; }
+    .space-rocket { display: none; }
 }
 
 .header-container {

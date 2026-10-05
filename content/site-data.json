@@ -1,5 +1,8 @@
 {
   "schemaVersion": 1,
+  "features": {
+    "rocketEnabled": true
+  },
   "prices": {
     "base": {
       "landing": {

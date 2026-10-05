@@ -320,15 +320,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     faqItems.forEach(item => {
         const questionBtn = item.querySelector('.faq-question');
+        questionBtn.setAttribute('aria-expanded', 'false');
         questionBtn.addEventListener('click', () => {
             const isOpen = item.classList.contains('open');
             
             // Close all
-            faqItems.forEach(i => i.classList.remove('open'));
+            faqItems.forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            });
 
             // Toggle clicked
             if (!isOpen) {
                 item.classList.add('open');
+                questionBtn.setAttribute('aria-expanded', 'true');
             }
         });
     });

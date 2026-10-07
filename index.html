@@ -83,7 +83,7 @@
         if (new URLSearchParams(location.search).has('_ym_status-check')) {
             loadCounter();
         } else {
-            m.setTimeout(loadCounter,1500);
+            m.setTimeout(loadCounter,3000);
             e.addEventListener('pointerdown',loadCounter,{once:true,passive:true});
             e.addEventListener('keydown',loadCounter,{once:true});
         }

@@ -60,13 +60,9 @@
     <link rel="icon" type="image/png" sizes="180x180" href="assets/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/hero_tech-mobile.webp" as="image" media="(max-width: 600px)" fetchpriority="high">
+    <link rel="preload" href="assets/hero_tech.webp" as="image" media="(min-width: 601px)" fetchpriority="high">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -83,10 +79,10 @@
                     <img src="assets/max_logo.svg" alt="MAX" class="max-icon-sm"> Написать в MAX
                 </a>
                 <a href="https://t.me/tmkvru" target="_blank" class="top-tg">
-                    <i data-lucide="send"></i> Telegram
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg> Telegram
                 </a>
                 <a href="tel:+79659484195" class="top-phone">
-                    <i data-lucide="phone"></i> +7 (965) 948-4195
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg> +7 (965) 948-4195
                 </a>
             </div>
         </div>
@@ -96,7 +92,7 @@
     <header class="site-header" id="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <img src="assets/logo.png" alt="TMK-WEB" class="site-logo-img">
+                <img src="assets/logo.webp" alt="TMK-WEB" class="site-logo-img" width="400" height="95">
                 <div class="logo-text">
                     <span class="brand-sub">Веб-студия & Маркетинг</span>
                 </div>
@@ -116,7 +112,7 @@
 
             <div class="header-actions">
                 <a href="#calculator" class="btn btn-outline btn-sm">
-                    <i data-lucide="calculator"></i> Расчет стоимости
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> Расчет стоимости
                 </a>
             </div>
         </div>
@@ -161,7 +157,7 @@
                 <path d="M56 26 H137 C145 26 151 31 153 36" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="2.2" stroke-linecap="round"/>
                 <path d="M56 54 H138" fill="none" stroke="#5e7893" stroke-opacity="0.45" stroke-width="1.4" stroke-linecap="round"/>
             </svg>
-            <img class="space-rocket__logo" src="assets/logo.png" alt="">
+            <img class="space-rocket__logo" src="assets/logo.webp" alt="" width="400" height="95" loading="lazy">
         </div>
 
     <!-- Hero Section -->
@@ -170,7 +166,7 @@
         <div class="container hero-grid">
             <div class="hero-text-content">
                 <div class="hero-badge">
-                    <i data-lucide="zap" class="badge-icon"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap badge-icon"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></svg>
                     <span>Более 10 лет создаем сайты и рекламу</span>
                 </div>
 
@@ -184,13 +180,13 @@
 
                 <div class="hero-cta-group">
                     <a href="#calculator" class="btn btn-primary btn-lg glow-button">
-                        <i data-lucide="calculator"></i> Рассчитать стоимость за 1 мин
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> Рассчитать стоимость за 1 мин
                     </a>
                     <a href="https://max.ru/u/f9LHodD0cOJwpJ6r_Q7BhaTfJdhE2yAvu9MFI6rVFzwkVeKLxU55GmwC2JM" target="_blank" class="btn btn-max btn-lg">
                         <img src="assets/max_logo.svg" alt="MAX" class="max-icon-btn"> Написать в MAX
                     </a>
                     <a href="https://t.me/tmkvru" target="_blank" class="btn btn-secondary btn-lg">
-                        <i data-lucide="send"></i> Telegram
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg> Telegram
                     </a>
                 </div>
 
@@ -229,15 +225,18 @@
                         </div>
                         <div class="window-title">tmk-web.ru — High Performance Platform</div>
                         <div class="speed-indicator">
-                            <i data-lucide="gauge"></i> 99/100 PageSpeed
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg> 99/100 PageSpeed
                         </div>
                     </div>
                     
                     <div class="visual-image-container">
-                        <img src="assets/hero_tech.jpg" alt="Интерфейс веб-разработки и маркетинга TMK-WEB" class="hero-image" width="1376" height="768" fetchpriority="high">
+                        <picture>
+                            <source media="(max-width: 600px)" srcset="assets/hero_tech-mobile.webp" type="image/webp">
+                            <img src="assets/hero_tech.webp" alt="Интерфейс веб-разработки и маркетинга TMK-WEB" class="hero-image" width="1000" height="558" fetchpriority="high" decoding="async">
+                        </picture>
                         <div class="floating-badge badge-top-right glass-card">
                             <div class="icon-circle bg-emerald">
-                                <i data-lucide="trending-up"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>
                             </div>
                             <div class="badge-content">
                                 <div class="badge-number">+340%</div>
@@ -247,7 +246,7 @@
 
                         <div class="floating-badge badge-bottom-left glass-card">
                             <div class="icon-circle bg-indigo">
-                                <i data-lucide="shield-check"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
                             </div>
                             <div class="badge-content">
                                 <div class="badge-number">12 Месяцев</div>
@@ -276,7 +275,7 @@
                 <div class="service-card glass-card">
                     <div class="service-header">
                         <div class="service-icon bg-indigo-light">
-                            <i data-lucide="layout"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
                         </div>
                         <span class="service-tag">Быстрый запуск</span>
                     </div>
@@ -284,11 +283,11 @@
                     <p class="service-text"> Одностраничный продающий сайт для высокой конверсии, презентации конкретной услуги или товара.</p>
                     
                     <div class="service-features">
-                        <div class="feature-item"><i data-lucide="check"></i> 7+ продуманных целевых блоков</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Домен и хостинг в подарок</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Удобная CMS для легких правок</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Интеграция с Telegram и MAX</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Полная адаптация под мобильные</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> 7+ продуманных целевых блоков</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Домен и хостинг в подарок</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Удобная CMS для легких правок</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Интеграция с Telegram и MAX</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Полная адаптация под мобильные</div>
                     </div>
 
                     <div class="service-footer">
@@ -297,7 +296,7 @@
                             <span class="meta-value">3 – 5 дней</span>
                         </div>
                         <button class="btn btn-outline btn-full open-modal-btn" data-service="Лендинг">
-                            Узнать стоимость <i data-lucide="arrow-right"></i>
+                            Узнать стоимость <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </button>
                     </div>
                 </div>
@@ -307,7 +306,7 @@
                     <div class="popular-ribbon">Популярный выбор</div>
                     <div class="service-header">
                         <div class="service-icon bg-cyan-light">
-                            <i data-lucide="globe"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                         </div>
                         <span class="service-tag">Для бизнеса</span>
                     </div>
@@ -315,11 +314,11 @@
                     <p class="service-text">Полноценное представительство вашей компании в сети с возможностью расширения структуры.</p>
                     
                     <div class="service-features">
-                        <div class="feature-item"><i data-lucide="check"></i> Включено до 10-15 уникальных страниц</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Базовая SEO-оптимизация под Уфу и другие регионы</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Настройка Яндекс.Метрики и Вебмастера</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Удобный каталог услуг и галерея</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Простая CMS для самостоятельных правок</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Включено до 10-15 уникальных страниц</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Базовая SEO-оптимизация под Уфу и другие регионы</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Настройка Яндекс.Метрики и Вебмастера</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Удобный каталог услуг и галерея</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Простая CMS для самостоятельных правок</div>
                     </div>
 
                     <div class="service-footer">
@@ -328,7 +327,7 @@
                             <span class="meta-value">7 – 10 дней</span>
                         </div>
                         <button class="btn btn-primary btn-full glow-button open-modal-btn" data-service="Многостраничный сайт">
-                            Узнать стоимость <i data-lucide="arrow-right"></i>
+                            Узнать стоимость <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </button>
                     </div>
                 </div>
@@ -337,7 +336,7 @@
                 <div class="service-card glass-card">
                     <div class="service-header">
                         <div class="service-icon bg-purple-light">
-                            <i data-lucide="shopping-bag"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
                         </div>
                         <span class="service-tag">Высокие продажи</span>
                     </div>
@@ -345,11 +344,11 @@
                     <p class="service-text">Интерактивная торговая площадка с удобной корзиной, фильтрацией товаров и автоматической оплатой.</p>
                     
                     <div class="service-features">
-                        <div class="feature-item"><i data-lucide="check"></i> До 50-500+ товаров в каталоге</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Подключение онлайн-оплаты и СДЭК</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Уникальный индивидуальный дизайн</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Глубокая SEO-подготовка каталога</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Удобное управление остатками и ценами</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> До 50-500+ товаров в каталоге</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Подключение онлайн-оплаты и СДЭК</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Уникальный индивидуальный дизайн</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Глубокая SEO-подготовка каталога</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Удобное управление остатками и ценами</div>
                     </div>
 
                     <div class="service-footer">
@@ -358,7 +357,7 @@
                             <span class="meta-value">от 14 дней</span>
                         </div>
                         <button class="btn btn-outline btn-full open-modal-btn" data-service="Интернет-магазин">
-                            Узнать стоимость <i data-lucide="arrow-right"></i>
+                            Узнать стоимость <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </button>
                     </div>
                 </div>
@@ -367,7 +366,7 @@
                 <div class="service-card glass-card">
                     <div class="service-header">
                         <div class="service-icon bg-emerald-light">
-                            <i data-lucide="line-chart"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-line-chart"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>
                         </div>
                         <span class="service-tag">Лидогенерация</span>
                     </div>
@@ -375,11 +374,11 @@
                     <p class="service-text">Привлечение потенциальных клиентов по всей России через Яндекс.Директ, SEO и социальные сети.</p>
                     
                     <div class="service-features">
-                        <div class="feature-item"><i data-lucide="check"></i> Настройка контекста в Яндекс (Поиск + РСЯ)</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Поисковое продвижение (SEO Яндекс & Google)</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Рекламные кампании в VK и Telegram</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Лидогенерация (оплата за целевые заявки)</div>
-                        <div class="feature-item"><i data-lucide="check"></i> Еженедельная аналитика и отчетность</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Настройка контекста в Яндекс (Поиск + РСЯ)</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Поисковое продвижение (SEO Яндекс & Google)</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Рекламные кампании в VK и Telegram</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Лидогенерация (оплата за целевые заявки)</div>
+                        <div class="feature-item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Еженедельная аналитика и отчетность</div>
                     </div>
 
                     <div class="service-footer">
@@ -388,7 +387,7 @@
                             <span class="meta-value">от 3 дней</span>
                         </div>
                         <button class="btn btn-outline btn-full open-modal-btn" data-service="Продвижение и реклама">
-                            Узнать стоимость <i data-lucide="arrow-right"></i>
+                            Узнать стоимость <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </button>
                     </div>
                 </div>
@@ -401,7 +400,7 @@
         <div class="container">
             <div class="glass-panel calculator-card">
                 <div class="calc-header text-center">
-                    <span class="section-tag"><i data-lucide="calculator"></i> Интерактивный калькулятор</span>
+                    <span class="section-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg> Интерактивный калькулятор</span>
                     <h2>Рассчитайте точную стоимость и сроки вашего проекта</h2>
                     <p>Выберите параметры и получите индивидуальную скидку 20% на запуск под ключ</p>
                 </div>
@@ -416,7 +415,7 @@
                                 <label class="radio-card active">
                                     <input type="radio" name="siteType" value="landing" checked>
                                     <div class="radio-content">
-                                        <i data-lucide="layout"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
                                         <div class="radio-title">Лендинг</div>
                                         <div class="radio-desc">Продающий 1-страничник</div>
                                     </div>
@@ -424,7 +423,7 @@
                                 <label class="radio-card">
                                     <input type="radio" name="siteType" value="corporate">
                                     <div class="radio-content">
-                                        <i data-lucide="globe"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                                         <div class="radio-title">Многостраничный</div>
                                         <div class="radio-desc">Каталог услуг или корпоративный</div>
                                     </div>
@@ -432,7 +431,7 @@
                                 <label class="radio-card">
                                     <input type="radio" name="siteType" value="shop">
                                     <div class="radio-content">
-                                        <i data-lucide="shopping-bag"></i>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></svg>
                                         <div class="radio-title">Интернет-магазин</div>
                                         <div class="radio-desc">Корзина, оплата и товары</div>
                                     </div>
@@ -447,7 +446,7 @@
                                 <label class="checkbox-card active">
                                     <input type="checkbox" name="marketing" value="yandex" checked>
                                     <div class="checkbox-content">
-                                        <span class="chk-box"><i data-lucide="check"></i></span>
+                                        <span class="chk-box"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg></span>
                                         <div>
                                             <div class="chk-title">Яндекс.Директ (Поиск + РСЯ)</div>
                                             <div class="chk-desc">Запуск рекламы на нужный регион с первого дня</div>
@@ -457,7 +456,7 @@
                                 <label class="checkbox-card">
                                     <input type="checkbox" name="marketing" value="seo">
                                     <div class="checkbox-content">
-                                        <span class="chk-box"><i data-lucide="check"></i></span>
+                                        <span class="chk-box"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg></span>
                                         <div>
                                             <div class="chk-title">SEO продвижение</div>
                                             <div class="chk-desc">Оптимизация для ТОП-10 Яндекс и Google</div>
@@ -467,7 +466,7 @@
                                 <label class="checkbox-card">
                                     <input type="checkbox" name="marketing" value="smm">
                                     <div class="checkbox-content">
-                                        <span class="chk-box"><i data-lucide="check"></i></span>
+                                        <span class="chk-box"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg></span>
                                         <div>
                                             <div class="chk-title">Трафик из VK / Telegram</div>
                                             <div class="chk-desc">Таргетированная реклама и каналы</div>
@@ -504,7 +503,7 @@
                     <div class="calc-summary-panel glass-card">
                         <div class="summary-header">
                             <h3>Ваш индивидуальный проект</h3>
-                            <div class="promo-pill"><i data-lucide="percent"></i> Скидка 20% активна</div>
+                            <div class="promo-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-percent"><line x1="19" x2="5" y1="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg> Скидка 20% активна</div>
                         </div>
 
                         <div class="summary-details">
@@ -540,9 +539,9 @@
                                 <input type="tel" id="calcPhone" required placeholder="+7 (___) ___-__-__">
                             </div>
                             <button type="submit" class="btn btn-primary btn-full glow-button">
-                                <i data-lucide="lock"></i> Зафиксировать скидку 20%
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Зафиксировать скидку 20%
                             </button>
-                            <p class="form-disclaimer"><i data-lucide="shield-check"></i> Ваши данные защищены. Бесплатная консультация специалиста.</p>
+                            <p class="form-disclaimer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg> Ваши данные защищены. Бесплатная консультация специалиста.</p>
                         </form>
                     </div>
                 </div>
@@ -554,7 +553,7 @@
     <section class="speed-section section-padding" id="speed">
         <div class="container">
             <div class="section-header text-center">
-                <span class="section-tag"><i data-lucide="gauge"></i> Гарантия скорости загрузки</span>
+                <span class="section-tag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg> Гарантия скорости загрузки</span>
                 <h2 class="section-title">Скорость сайта ВСЕГДА выше 90 баллов в Google PageSpeed</h2>
                 <p class="section-description">
                     Скорость — главный показатель успешного сайта. Быстрый сайт лучше ранжируется в Яндекс и Google, снижает стоимость клика в рекламе и превращает посетителей в покупателей.
@@ -574,10 +573,10 @@
                         </div>
                     </div>
                     <ul class="speed-list">
-                        <li><i data-lucide="x"></i> Медленный отклик сервера (TTFB > 1.2s)</li>
-                        <li><i data-lucide="x"></i> До 40% пользователей уходят не дождавшись загрузки</li>
-                        <li><i data-lucide="x"></i> Завышенная стоимость клика в Яндекс.Директе</li>
-                        <li><i data-lucide="x"></i> Плохое ранжирование в поисковых системах</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Медленный отклик сервера (TTFB > 1.2s)</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> До 40% пользователей уходят не дождавшись загрузки</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Завышенная стоимость клика в Яндекс.Директе</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> Плохое ранжирование в поисковых системах</li>
                     </ul>
                 </div>
 
@@ -594,10 +593,10 @@
                         </div>
                     </div>
                     <ul class="speed-list">
-                        <li><i data-lucide="check"></i> Мгновенная загрузка (TTFB < 0.2s)</li>
-                        <li><i data-lucide="check"></i> Максимальная конверсия из клика в заявку</li>
-                        <li><i data-lucide="check"></i> Минимальная цена за клик в Яндекс.Директ</li>
-                        <li><i data-lucide="check"></i> Приоритет в поисковой выдаче Google и Яндекс</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Мгновенная загрузка (TTFB < 0.2s)</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Максимальная конверсия из клика в заявку</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Минимальная цена за клик в Яндекс.Директ</li>
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg> Приоритет в поисковой выдаче Google и Яндекс</li>
                     </ul>
                 </div>
             </div>
@@ -628,9 +627,9 @@
                 <!-- Case 1 -->
                 <div class="portfolio-card glass-card" data-category="ecom auto">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_ecom.jpg" alt="Уфашинторг - Интернет-магазин шин и дисков" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_ecom.webp" alt="Уфашинторг - Интернет-магазин шин и дисков" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="gauge"></i> 98/100 PageSpeed</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg> 98/100 PageSpeed</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
@@ -648,9 +647,9 @@
                 <!-- Case 2 -->
                 <div class="portfolio-card glass-card" data-category="services">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_hitech.jpg" alt="B4C Design - Hi-Tech портал" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_hitech.webp" alt="B4C Design - Hi-Tech портал" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="gauge"></i> 99/100 PageSpeed</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg> 99/100 PageSpeed</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
@@ -668,9 +667,9 @@
                 <!-- Case 3 -->
                 <div class="portfolio-card glass-card" data-category="auto">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_auto.jpg" alt="Ixen Motors Ufa & Peugeot & Citroen" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_auto.webp" alt="Ixen Motors Ufa & Peugeot & Citroen" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="gauge"></i> 97/100 PageSpeed</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg> 97/100 PageSpeed</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
@@ -688,9 +687,9 @@
                 <!-- Case 4 -->
                 <div class="portfolio-card glass-card" data-category="services">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_masterlodok.jpg" alt="Мастер Лодок - Производитель лодок и моторов" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_masterlodok.webp" alt="Мастер Лодок - Производитель лодок и моторов" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="gauge"></i> 96/100 PageSpeed</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg> 96/100 PageSpeed</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
@@ -708,14 +707,14 @@
                 <!-- Case 5: Интегро-Дом -->
                 <div class="portfolio-card glass-card" data-category="services">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_integrodom.jpg" alt="Интегро-Дом - Строительство домов и коттеджей" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_integrodom.webp" alt="Интегро-Дом - Строительство домов и коттеджей" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="gauge"></i> 98/100 PageSpeed</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg> 98/100 PageSpeed</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <span class="case-cat">Строительство • Уфа</span>
-                        <h3 class="case-title"><a href="http://integro-dom.ru/" target="_blank">Интегро-Дом <i data-lucide="external-link" class="link-icon"></i></a></h3>
+                        <h3 class="case-title"><a href="http://integro-dom.ru/" target="_blank">Интегро-Дом <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link link-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></h3>
                         <p class="case-desc">Сайт производителя домовых конструкций и загородного домостроения под ключ в Уфе.</p>
                         <div class="case-tags">
                             <span>Строительство</span>
@@ -728,14 +727,14 @@
                 <!-- Case 6: Futurewheels -->
                 <div class="portfolio-card glass-card" data-category="ecom auto">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_futurewheels.jpg" alt="Futurewheels - Интернет-магазин автодисков" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_futurewheels.webp" alt="Futurewheels - Интернет-магазин автодисков" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="gauge"></i> 99/100 PageSpeed</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg> 99/100 PageSpeed</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <span class="case-cat">Интернет-магазин • Авто</span>
-                        <h3 class="case-title"><a href="http://futurewheels.ru/" target="_blank">Futurewheels <i data-lucide="external-link" class="link-icon"></i></a></h3>
+                        <h3 class="case-title"><a href="http://futurewheels.ru/" target="_blank">Futurewheels <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link link-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></h3>
                         <p class="case-desc">Интернет-магазин премиальных автомобильных колес и кованых дисков с фильтрацией подбора.</p>
                         <div class="case-tags">
                             <span>Автодиски</span>
@@ -748,14 +747,14 @@
                 <!-- Case 7: Вип-Арт -->
                 <div class="portfolio-card glass-card" data-category="services">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_vipart.jpg" alt="Вип-Арт - Концертное агентство татарских и башкирских исполнителей" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_vipart.webp" alt="Вип-Арт - Концертное агентство татарских и башкирских исполнителей" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="gauge"></i> 98/100 PageSpeed</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg> 98/100 PageSpeed</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <span class="case-cat">Шоу-бизнес & Афиша • Уфа</span>
-                        <h3 class="case-title"><a href="https://vipart-ufa.ru/" target="_blank">Вип-Арт <i data-lucide="external-link" class="link-icon"></i></a></h3>
+                        <h3 class="case-title"><a href="https://vipart-ufa.ru/" target="_blank">Вип-Арт <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link link-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></h3>
                         <p class="case-desc">Сайт крупнейшего концертного агентства татарских и башкирских артистов с покупкой билетов через Intickets.</p>
                         <div class="case-tags">
                             <span>Концертное агентство</span>
@@ -768,14 +767,14 @@
                 <!-- Case 8: Мастер Фургон -->
                 <div class="portfolio-card glass-card" data-category="auto services">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_master_furgon.jpg" alt="Главная страница сайта Мастер Фургон" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_master_furgon.webp" alt="Главная страница сайта Мастер Фургон" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="check-circle"></i> Проект онлайн</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Проект онлайн</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <span class="case-cat">Авто & Техника • Производство</span>
-                        <h3 class="case-title"><a href="https://master-furgon.ru/" target="_blank" rel="noopener noreferrer">Мастер Фургон <i data-lucide="external-link" class="link-icon"></i></a></h3>
+                        <h3 class="case-title"><a href="https://master-furgon.ru/" target="_blank" rel="noopener noreferrer">Мастер Фургон <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link link-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></h3>
                         <p class="case-desc">Сайт компании по обшивке и переоборудованию фургонов с каталогом комплектов для разных марок автомобилей.</p>
                         <div class="case-tags">
                             <span>Фургоны</span>
@@ -788,14 +787,14 @@
                 <!-- Case 9: OERSTED -->
                 <div class="portfolio-card glass-card" data-category="services">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_oersted_global.jpg" alt="Главная страница сайта OERSTED" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_oersted_global.webp" alt="Главная страница сайта OERSTED" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="check-circle"></i> Проект онлайн</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Проект онлайн</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <span class="case-cat">Производство • Конструкции</span>
-                        <h3 class="case-title"><a href="https://oersted-global.ru/" target="_blank" rel="noopener noreferrer">OERSTED <i data-lucide="external-link" class="link-icon"></i></a></h3>
+                        <h3 class="case-title"><a href="https://oersted-global.ru/" target="_blank" rel="noopener noreferrer">OERSTED <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link link-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></h3>
                         <p class="case-desc">Сайт завода светопрозрачных конструкций с направлениями по дверям, окнам, раздвижным системам и фасадам.</p>
                         <div class="case-tags">
                             <span>Производство</span>
@@ -808,14 +807,14 @@
                 <!-- Case 10: РусЛесТорг -->
                 <div class="portfolio-card glass-card" data-category="services">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_rus_les_torg.jpg" alt="Главная страница сайта РусЛесТорг" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_rus_les_torg.webp" alt="Главная страница сайта РусЛесТорг" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="check-circle"></i> Проект онлайн</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Проект онлайн</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <span class="case-cat">Производство • Пиломатериалы</span>
-                        <h3 class="case-title"><a href="https://rus-les-torg.ru/" target="_blank" rel="noopener noreferrer">РусЛесТорг <i data-lucide="external-link" class="link-icon"></i></a></h3>
+                        <h3 class="case-title"><a href="https://rus-les-torg.ru/" target="_blank" rel="noopener noreferrer">РусЛесТорг <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link link-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></h3>
                         <p class="case-desc">Сайт производителя строганой доски и бруса камерной сушки с возможностью заказать расчёт пиломатериалов.</p>
                         <div class="case-tags">
                             <span>Пиломатериалы</span>
@@ -828,14 +827,14 @@
                 <!-- Case 11: Энергосфера -->
                 <div class="portfolio-card glass-card" data-category="auto services">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_en_sf.jpg" alt="Главная страница сайта Энергосфера" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_en_sf.webp" alt="Главная страница сайта Энергосфера" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="check-circle"></i> Проект онлайн</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Проект онлайн</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <span class="case-cat">Услуги • Электролаборатория</span>
-                        <h3 class="case-title"><a href="https://en-sf.ru/" target="_blank" rel="noopener noreferrer">Энергосфера <i data-lucide="external-link" class="link-icon"></i></a></h3>
+                        <h3 class="case-title"><a href="https://en-sf.ru/" target="_blank" rel="noopener noreferrer">Энергосфера <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link link-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></h3>
                         <p class="case-desc">Сайт электролаборатории по испытаниям и измерениям электрооборудования и проверке релейной защиты.</p>
                         <div class="case-tags">
                             <span>Электролаборатория</span>
@@ -848,14 +847,14 @@
                 <!-- Case 12: СПРИН -->
                 <div class="portfolio-card glass-card" data-category="auto services">
                     <div class="portfolio-thumb">
-                        <img src="assets/portfolio_sprin.jpg" alt="Главная страница сайта СПРИН" loading="lazy" decoding="async">
+                        <img src="assets/portfolio_sprin.webp" alt="Главная страница сайта СПРИН" loading="lazy" decoding="async">
                         <div class="portfolio-overlay">
-                            <span class="speed-pill"><i data-lucide="check-circle"></i> Проект онлайн</span>
+                            <span class="speed-pill"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Проект онлайн</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <span class="case-cat">Промышленность • Оборудование</span>
-                        <h3 class="case-title"><a href="https://sprin.company/" target="_blank" rel="noopener noreferrer">СПРИН <i data-lucide="external-link" class="link-icon"></i></a></h3>
+                        <h3 class="case-title"><a href="https://sprin.company/" target="_blank" rel="noopener noreferrer">СПРИН <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link link-icon"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a></h3>
                         <p class="case-desc">Сайт поставщика металлообрабатывающего оборудования, инструмента и станочной оснастки для предприятий.</p>
                         <div class="case-tags">
                             <span>Станки</span>
@@ -879,42 +878,42 @@
             <div class="advantages-grid">
                 <div class="adv-card glass-card">
                     <div class="adv-number">01</div>
-                    <div class="adv-icon"><i data-lucide="globe"></i></div>
+                    <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
                     <h3>Работаем по всей России</h3>
                     <p>Обсуждаем задачи онлайн, согласовываем этапы и заключаем договор с клиентами из любого региона России.</p>
                 </div>
 
                 <div class="adv-card glass-card">
                     <div class="adv-number">02</div>
-                    <div class="adv-icon"><i data-lucide="zap"></i></div>
+                    <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></svg></div>
                     <h3>Скорость > 90 PageSpeed</h3>
                     <p>Оптимизируем код сайта до идеала. Ваш сайт загружается за доли секунды и получает высшие оценки от поисковиков.</p>
                 </div>
 
                 <div class="adv-card glass-card">
                     <div class="adv-number">03</div>
-                    <div class="adv-icon"><i data-lucide="target"></i></div>
+                    <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
                     <h3>Комплекс "Сайт + Реклама"</h3>
                     <p>Мы не просто рисуем макет, а сразу настраиваем Яндекс.Директ и SEO, чтобы ваш сайт приносил деньги с первых дней.</p>
                 </div>
 
                 <div class="adv-card glass-card">
                     <div class="adv-number">04</div>
-                    <div class="adv-icon"><i data-lucide="shield"></i></div>
+                    <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
                     <h3>Гарантия 12 месяцев</h3>
                     <p>Сопровождаем ваш проект после запуска. Обучаем работе с CMS и оперативно помогаем по любым техническим вопросам.</p>
                 </div>
 
                 <div class="adv-card glass-card">
                     <div class="adv-number">05</div>
-                    <div class="adv-icon"><i data-lucide="file-text"></i></div>
+                    <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
                     <h3>Фиксированная смета</h3>
                     <p>Цена и сроки прописываются в договоре. Никаких внезапных доплат в процессе работы.</p>
                 </div>
 
                 <div class="adv-card glass-card">
                     <div class="adv-number">06</div>
-                    <div class="adv-icon"><i data-lucide="gift"></i></div>
+                    <div class="adv-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg></div>
                     <h3>Домен и хостинг в подарок</h3>
                     <p>При заказе разработки сайта мы берем на себя регистрацию доменного имени и оплату хостинга.</p>
                 </div>
@@ -928,7 +927,7 @@
             <div class="section-header text-center">
                 <span class="section-tag">Отзывы</span>
                 <h2 class="section-title">Отзывы реальных заказчиков</h2>
-                <p class="reviews-intro"><a href="https://www.avito.ru/brands/a3d18204fd6b5ac899b1e46f9b6cb92e/all/predlozheniya_uslug?gdlkerfdnwq=101&amp;page_from=from_item_card&amp;iid=1791223906&amp;sellerId=35ed1e23426387280e925e94c045b708" target="_blank" rel="noopener noreferrer">5 звезд на самом популярном классифайде РФ <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></p>
+                <p class="reviews-intro"><a href="https://www.avito.ru/brands/a3d18204fd6b5ac899b1e46f9b6cb92e/all/predlozheniya_uslug?gdlkerfdnwq=101&amp;page_from=from_item_card&amp;iid=1791223906&amp;sellerId=35ed1e23426387280e925e94c045b708" target="_blank" rel="noopener noreferrer">5 звезд на самом популярном классифайде РФ <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a></p>
             </div>
 
             <div class="reviews-carousel">
@@ -1009,9 +1008,9 @@
                     </div>
                 </div>
                 <div class="reviews-controls">
-                    <button class="reviews-arrow" type="button" id="reviewsPrev" aria-label="Предыдущие отзывы"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+                    <button class="reviews-arrow" type="button" id="reviewsPrev" aria-label="Предыдущие отзывы"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button>
                     <span>Листайте отзывы в сторону</span>
-                    <button class="reviews-arrow" type="button" id="reviewsNext" aria-label="Следующие отзывы"><i data-lucide="arrow-right" aria-hidden="true"></i></button>
+                    <button class="reviews-arrow" type="button" id="reviewsNext" aria-label="Следующие отзывы"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
                 </div>
             </div>
         </div>
@@ -1022,7 +1021,7 @@
         <div class="container">
             <div class="promo-banner glass-panel glow-border">
                 <div class="promo-content">
-                    <span class="promo-badge"><i data-lucide="flame"></i> Выгодное предложение</span>
+                    <span class="promo-badge"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg> Выгодное предложение</span>
                     <h2>Скидка 20% при заказе комплекса "Сайт + Продвижение"</h2>
                     <p>Забронируйте скидку сегодня и получите готовую систему привлечения клиентов для бизнеса в любом регионе России.</p>
                 </div>
@@ -1031,7 +1030,7 @@
                         <img src="assets/max_logo.svg" alt="MAX" class="max-icon-btn"> Написать в MAX
                     </a>
                     <a href="https://t.me/tmkvru" target="_blank" class="btn btn-secondary btn-lg">
-                        <i data-lucide="send"></i> Telegram
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg> Telegram
                     </a>
                 </div>
             </div>
@@ -1050,7 +1049,7 @@
                 <div class="faq-item glass-card">
                     <button class="faq-question">
                         <span>Сколько времени занимает разработка сайта?</span>
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
                         <p>Создание лендинга обычно занимает от 3 до 5 дней. Многостраничного сайта или каталога — от 7 до 10 дней. Интернет-магазина — от 14 дней. Точный срок согласуется до старта работ.</p>
@@ -1060,7 +1059,7 @@
                 <div class="faq-item glass-card">
                     <button class="faq-question">
                         <span>Вы работаете официально по договору?</span>
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
                         <p>Да, мы заключаем официальный договор с физическими и юридическими лицами. В договоре фиксируются состав работ, итоговая стоимость и гарантийные обязательства.</p>
@@ -1070,7 +1069,7 @@
                 <div class="faq-item glass-card">
                     <button class="faq-question">
                         <span>Смогу ли я самостоятельно менять информацию на сайте?</span>
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
                         <p>Конечно! Все наши сайты оснащены удобной CMS (системой управления). Вы сможете легко редактировать тексты, добавлять фото, товары и менять контакты без навыков программирования. Мы записываем понятную видеоинструкцию.</p>
@@ -1080,7 +1079,7 @@
                 <div class="faq-item glass-card">
                     <button class="faq-question">
                         <span>Настраиваете ли вы рекламу после создания сайта?</span>
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
                         <p>Да, интернет-маркетинг — наша вторая ключевая специализация. Мы настраиваем Яндекс.Директ (Поиск + РСЯ), SEO оптимизацию, аналитику и отслеживание звонков, чтобы ваш сайт с первых дней приносил реальные заявки.</p>
@@ -1090,7 +1089,7 @@
                 <div class="faq-item glass-card">
                     <button class="faq-question">
                         <span>Почему скорость в Google PageSpeed так важна?</span>
-                        <i data-lucide="chevron-down" class="faq-icon"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down faq-icon"><path d="m6 9 6 6 6-6"/></svg>
                     </button>
                     <div class="faq-answer">
                         <p>Медленный сайт теряет до 40-50% мобильного трафика еще на этапе загрузки. Кроме того, поисковые алгоритмы Яндекс и Google снижают в выдаче медленные сайты и повышают цену клика в рекламе. Наши сайты имеют показатель >90/100, что обеспечивает наивысшую конверсию.</p>
@@ -1113,7 +1112,7 @@
                     <div class="contact-details-list">
                         <div class="contact-detail-item">
                             <div class="contact-icon bg-indigo-light">
-                                <i data-lucide="phone"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
                             </div>
                             <div>
                                 <span class="detail-label">Телефон в Уфе</span>
@@ -1137,13 +1136,13 @@
 
                         <div class="contact-detail-item">
                             <div class="contact-icon bg-cyan-light">
-                                <i data-lucide="map-pin"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
                             </div>
                             <div>
                                 <span class="detail-label">Адрес офиса</span>
                                 <span class="detail-val">г. Уфа, ул. Горбатова 2, Территория 3000</span>
                                 <a href="https://go.2gis.com/g027b" target="_blank" class="map-link">
-                                    Открыть в 2ГИС <i data-lucide="external-link"></i>
+                                    Открыть в 2ГИС <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                                 </a>
                             </div>
                         </div>
@@ -1151,8 +1150,8 @@
 
                     <div class="social-links-row">
                         <a href="https://max.ru/u/f9LHodD0cOJwpJ6r_Q7BhaTfJdhE2yAvu9MFI6rVFzwkVeKLxU55GmwC2JM" target="_blank" class="social-btn max"><img src="assets/max_logo.svg" alt="MAX" class="max-icon-btn"> MAX</a>
-                        <a href="https://t.me/tmkvru" target="_blank" class="social-btn tg"><i data-lucide="send"></i> Telegram</a>
-                        <a href="tel:+79659484195" class="social-btn phone"><i data-lucide="phone-call"></i> Позвонить</a>
+                        <a href="https://t.me/tmkvru" target="_blank" class="social-btn tg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg> Telegram</a>
+                        <a href="tel:+79659484195" class="social-btn phone"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call"><path d="M13 2a9 9 0 0 1 9 9"/><path d="M13 6a5 5 0 0 1 5 5"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg> Позвонить</a>
                     </div>
                 </div>
 
@@ -1165,7 +1164,7 @@
                         <div class="form-group">
                             <label for="userName">Ваше имя</label>
                             <div class="input-with-icon">
-                                <i data-lucide="user"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                 <input type="text" id="userName" required placeholder="Алексей">
                             </div>
                         </div>
@@ -1173,7 +1172,7 @@
                         <div class="form-group">
                             <label for="userPhone">Номер телефона</label>
                             <div class="input-with-icon">
-                                <i data-lucide="phone"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
                                 <input type="tel" id="userPhone" required placeholder="+7 (___) ___-__-__">
                             </div>
                         </div>
@@ -1195,7 +1194,7 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-full glow-button btn-lg">
-                            <i data-lucide="send"></i> Отправить заявку
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg> Отправить заявку
                         </button>
                         <p class="privacy-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
                     </form>
@@ -1210,7 +1209,7 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <img src="assets/logo.png" alt="TMK-WEB" class="site-logo-img">
+                    <img src="assets/logo.webp" alt="TMK-WEB" class="site-logo-img" width="400" height="95" loading="lazy">
                 </a>
                 <p>Разработка веб-сайтов и интернет-маркетинг по всей России. Опыт более 10 лет.</p>
             </div>
@@ -1229,11 +1228,11 @@
             <span class="btn-text">MAX</span>
         </a>
         <a href="https://t.me/tmkvru" target="_blank" class="floating-btn tg-float" title="Написать в Telegram">
-            <i data-lucide="send"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
             <span class="btn-text">Telegram</span>
         </a>
         <a href="tel:+79659484195" class="floating-btn phone-float" title="Позвонить">
-            <i data-lucide="phone"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
             <span class="btn-text">+7 (965) 948-4195</span>
         </a>
     </div>
@@ -1252,12 +1251,12 @@
                 <div class="form-group">
                     <label>Ваш телефон</label>
                     <div class="input-with-icon">
-                        <i data-lucide="phone"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
                         <input type="tel" id="modalPhone" required placeholder="+7 (___) ___-__-__">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-full glow-button">
-                    <i data-lucide="check-circle"></i> Запросить расчет
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg> Запросить расчет
                 </button>
             </form>
         </div>
@@ -1266,7 +1265,7 @@
     <!-- Toast Notification -->
     <div class="toast-notification" id="toast">
         <div class="toast-icon bg-emerald">
-            <i data-lucide="check"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
         </div>
         <div class="toast-content">
             <strong id="toastTitle">Заявка отправлена!</strong>
@@ -1277,9 +1276,5 @@
     <script src="script.js"></script>
     <script src="reviews.js"></script>
     <script src="rocket.js"></script>
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
 </body>
 </html>

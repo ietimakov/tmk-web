@@ -66,7 +66,7 @@
         "1С Интеграция"
       ],
       "score": "98/100 PageSpeed",
-      "image": "assets/portfolio_ecom.jpg",
+      "image": "assets/portfolio_ecom.webp",
       "url": ""
     },
     {
@@ -83,7 +83,7 @@
         "SEO"
       ],
       "score": "99/100 PageSpeed",
-      "image": "assets/portfolio_hitech.jpg",
+      "image": "assets/portfolio_hitech.webp",
       "url": ""
     },
     {
@@ -100,7 +100,7 @@
         "Директ"
       ],
       "score": "97/100 PageSpeed",
-      "image": "assets/portfolio_auto.jpg",
+      "image": "assets/portfolio_auto.webp",
       "url": ""
     },
     {
@@ -117,7 +117,7 @@
         "Карта дилеров"
       ],
       "score": "96/100 PageSpeed",
-      "image": "assets/portfolio_masterlodok.jpg",
+      "image": "assets/portfolio_masterlodok.webp",
       "url": ""
     },
     {
@@ -134,7 +134,7 @@
         "Каталог проектов"
       ],
       "score": "98/100 PageSpeed",
-      "image": "assets/portfolio_integrodom.jpg",
+      "image": "assets/portfolio_integrodom.webp",
       "url": "http://integro-dom.ru/"
     },
     {
@@ -152,7 +152,7 @@
         "Фильтр подбора"
       ],
       "score": "99/100 PageSpeed",
-      "image": "assets/portfolio_futurewheels.jpg",
+      "image": "assets/portfolio_futurewheels.webp",
       "url": "http://futurewheels.ru/"
     },
     {
@@ -169,7 +169,7 @@
         "Intickets"
       ],
       "score": "98/100 PageSpeed",
-      "image": "assets/portfolio_vipart.jpg",
+      "image": "assets/portfolio_vipart.webp",
       "url": "https://vipart-ufa.ru/"
     },
     {
@@ -187,7 +187,7 @@
         "Переоборудование"
       ],
       "score": "Проект онлайн",
-      "image": "assets/portfolio_master_furgon.jpg",
+      "image": "assets/portfolio_master_furgon.webp",
       "url": "https://master-furgon.ru/"
     },
     {
@@ -204,7 +204,7 @@
         "Фасады"
       ],
       "score": "Проект онлайн",
-      "image": "assets/portfolio_oersted_global.jpg",
+      "image": "assets/portfolio_oersted_global.webp",
       "url": "https://oersted-global.ru/"
     },
     {
@@ -221,7 +221,7 @@
         "Доставка"
       ],
       "score": "Проект онлайн",
-      "image": "assets/portfolio_rus_les_torg.jpg",
+      "image": "assets/portfolio_rus_les_torg.webp",
       "url": "https://rus-les-torg.ru/"
     },
     {
@@ -239,7 +239,7 @@
         "Услуги"
       ],
       "score": "Проект онлайн",
-      "image": "assets/portfolio_en_sf.jpg",
+      "image": "assets/portfolio_en_sf.webp",
       "url": "https://en-sf.ru/"
     },
     {
@@ -257,7 +257,7 @@
         "Оснастка"
       ],
       "score": "Проект онлайн",
-      "image": "assets/portfolio_sprin.jpg",
+      "image": "assets/portfolio_sprin.webp",
       "url": "https://sprin.company/"
     }
   ]

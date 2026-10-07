@@ -1,3 +1,30 @@
+@font-face {
+    font-family: Inter;
+    src: url('assets/fonts/inter-cyrillic.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: optional;
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('assets/fonts/inter-latin.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: optional;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: Outfit;
+    src: url('assets/fonts/outfit-latin.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400 800;
+    font-display: optional;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* -------------------------------------------------------------
    TMK-WEB — CSS Design System & Theme Styles
    ------------------------------------------------------------- */
@@ -429,7 +456,7 @@ img {
     aspect-ratio: 820 / 860;
     top: 14%;
     right: -8%;
-    background-image: url('assets/earth.png');
+    background-image: url('assets/earth.webp');
     background-size: 100% 100%;
     -webkit-mask-image: radial-gradient(ellipse 48% 46% at 50% 51%, #000 97%, transparent 100%);
     mask-image: radial-gradient(ellipse 48% 46% at 50% 51%, #000 97%, transparent 100%);
@@ -441,7 +468,7 @@ img {
     top: 62%;
     left: -6%;
     z-index: 0;
-    background-image: url('assets/moon.png');
+    background-image: url('assets/moon.webp');
     background-size: contain;
     opacity: 0.58;
 }
@@ -553,10 +580,11 @@ img {
 
 @media (max-width: 600px) {
     .space-galaxy { width: 85vw; opacity: 0.5; }
-    .space-planet--earth { right: -145px; opacity: 0.43; }
-    .space-planet--moon { width: 120px; left: -82px; top: 64%; opacity: 0.42; }
+    .space-planet--earth { right: -145px; opacity: 0.43; background-image: url('assets/earth-mobile.webp'); }
+    .space-planet--moon { width: 120px; left: -82px; top: 64%; opacity: 0.42; background-image: url('assets/moon-mobile.webp'); }
     .space-rocket { display: none; }
-    .space-comet { width: 95px; }
+    .space-comet { display: none; }
+    .space-stars { animation: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

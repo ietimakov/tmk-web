@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scheduleFlight(1200);
     });
 
-    const siteDataPromise = window.tmkSiteDataPromise || fetch(`content/site-data.json?t=${Date.now()}`, { cache: 'no-store' })
+    const siteDataPromise = window.tmkSiteDataPromise || fetch('content/site-data.json')
         .then(response => {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             return response.json();

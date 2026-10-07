@@ -10,6 +10,8 @@ const MIME_TYPES = {
     '.jpg': 'image/jpeg',
     '.jpeg': 'image/jpeg',
     '.png': 'image/png',
+    '.webp': 'image/webp',
+    '.woff2': 'font/woff2',
     '.svg': 'image/svg+xml',
     '.ico': 'image/x-icon'
 };

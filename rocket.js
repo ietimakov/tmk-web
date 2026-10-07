@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let nextFlight = null;
     let resizeTimer = null;
     let rocketEnabled = false;
+    let flightStarted = false;
+
+    const isMobile = () => window.matchMedia('(max-width: 600px)').matches;
 
     const between = (a, b, share) => a + (b - a) * share;
 
@@ -25,19 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function scheduleFlight(delay) {
         window.clearTimeout(nextFlight);
-        if (!document.hidden && !reducedMotion.matches && rocketEnabled) {
+        if (!document.hidden && !reducedMotion.matches && !isMobile() && rocketEnabled && !flightStarted) {
             nextFlight = window.setTimeout(runFlight, delay);
         }
     }
 
     function runFlight() {
-        if (document.hidden || reducedMotion.matches || !rocketEnabled) return;
+        if (document.hidden || reducedMotion.matches || isMobile() || !rocketEnabled || flightStarted) return;
+
+        flightStarted = true;
 
         const earthRect = earth.getBoundingClientRect();
         const moonRect = moon.getBoundingClientRect();
-        const mobile = window.innerWidth <= 600;
         const from = {
-            x: Math.min(window.innerWidth - 22, earthRect.left + earthRect.width * (mobile ? 0.08 : 0.25)),
+            x: Math.min(window.innerWidth - 22, earthRect.left + earthRect.width * 0.25),
             y: earthRect.top + earthRect.height * 0.7
         };
         const center = { x: window.innerWidth * 0.52, y: window.innerHeight * 0.5 };
@@ -47,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         const halfWidth = rocket.offsetWidth / 2;
         const halfHeight = rocket.offsetHeight / 2;
-        const fullSize = mobile ? 1 : 1.08;
+        const fullSize = 1.08;
 
         function frame(offset, x, y, scale, degrees, opacity, easing) {
             return {
@@ -82,22 +86,35 @@ document.addEventListener('DOMContentLoaded', () => {
             rocket.classList.remove('is-flying');
             flight.cancel();
             flight = null;
-            scheduleFlight(20000);
         };
     }
 
     document.addEventListener('visibilitychange', () => {
-        clearFlight();
-        if (!document.hidden) scheduleFlight(1200);
+        if (document.hidden) {
+            if (flight) flight.pause();
+            return;
+        }
+
+        if (flight) flight.play();
+        else scheduleFlight(1200);
     });
 
     window.addEventListener('resize', () => {
+        if (isMobile()) {
+            clearFlight();
+            return;
+        }
+        if (flightStarted) return;
         clearFlight();
         resizeTimer = window.setTimeout(() => scheduleFlight(800), 250);
     });
 
     reducedMotion.addEventListener('change', () => {
-        clearFlight();
+        if (reducedMotion.matches) {
+            clearFlight();
+            return;
+        }
+
         scheduleFlight(1200);
     });
 

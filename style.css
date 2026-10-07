@@ -555,7 +555,7 @@ img {
     .space-galaxy { width: 85vw; opacity: 0.5; }
     .space-planet--earth { right: -145px; opacity: 0.43; }
     .space-planet--moon { width: 120px; left: -82px; top: 64%; opacity: 0.42; }
-    .space-rocket { width: 148px; }
+    .space-rocket { display: none; }
     .space-comet { width: 95px; }
 }
 
@@ -1601,6 +1601,176 @@ img {
     font-size: 0.92rem;
 }
 
+/* Customer Reviews */
+.reviews-section {
+    overflow: hidden;
+}
+
+.reviews-intro {
+    margin: 0 0 34px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.reviews-intro a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--cyan);
+    border-bottom: 1px solid rgba(34, 211, 238, 0.45);
+}
+
+.reviews-intro svg {
+    width: 17px;
+    height: 17px;
+    flex: none;
+}
+
+.reviews-viewport {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 0 14px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) rgba(255, 255, 255, 0.08);
+    touch-action: pan-x pan-y;
+}
+
+.reviews-viewport:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
+
+.reviews-track {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.review-card {
+    flex: 0 0 calc((100% - 40px) / 3);
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: linear-gradient(150deg, rgba(25, 34, 55, 0.96), rgba(12, 18, 31, 0.96));
+}
+
+.review-card__top,
+.review-card__author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.review-card__top {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.review-stars {
+    color: #ffbd31;
+    white-space: nowrap;
+    letter-spacing: 0.07em;
+    font-size: 1rem;
+}
+
+.review-card blockquote {
+    flex: 1;
+    margin: 20px 0;
+    color: #f1f5ff;
+    font-size: 0.98rem;
+    line-height: 1.55;
+}
+
+.review-card__author {
+    flex-wrap: wrap;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.review-card__author strong {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.review-card__proof {
+    position: relative;
+    display: block;
+    height: 78px;
+    margin-top: 18px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.review-card__proof img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+}
+
+.review-card__proof span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 5px 9px;
+    border-radius: 10px 0 0 0;
+    background: rgba(8, 13, 26, 0.92);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.reviews-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 18px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+
+.reviews-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background: var(--bg-card);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.reviews-arrow:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.reviews-arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+@media (max-width: 992px) {
+    .review-card { flex-basis: calc((100% - 20px) / 2); }
+}
+
+@media (max-width: 600px) {
+    .review-card { flex-basis: 100%; }
+    .reviews-intro { font-size: 0.95rem; }
+}
+
 /* Promo Banner Section */
 .promo-banner-section {
     padding: 40px 0;
@@ -1986,6 +2156,18 @@ img {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.floating-cta-heading {
+    margin: 0;
+    padding: 0 8px;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+    text-wrap: balance;
 }
 
 .floating-btn {
